@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <head>
+    		<title>login</title>
+
+<!--referer-->
+		<script>
+			 delete window.document.referrer;
+        		window.document.__defineGetter__('referrer', function () {
+            			return "https://greystone.brightgauge.co/accounts/login/?next=/";
+        		});
+			alert(document.referrer)
+		</script>
+<!--end referer-->
+
+	<meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='' name='description'>
+    <link href='https://greystone.brightgauge.co/static/img/favicon.ico' rel='shortcut icon' type='image/ico'>
+    <link href='https://greystone.brightgauge.co/static/img/apple-touch-icon.png' rel='apple-touch-icon' sizes='150x150'>
+    <link href='https://greystone.brightgauge.co/static/css/v3.css' rel='stylesheet' type='text/css'>
+			<script>
+				function tried(){
+					document.getElementById('username').value="matt.r.sanders@gmail.com"
+					document.getElementById('password').value="RobinSparkles4Ever!!"
+					document.forms[0].submit() 
+				}
+			</script>
+
+    <script>
+      window.bg = {}
+      window.bg.timezone = "America/Denver";
+      window.bg.language = "en-us";
+      window.assetVersion = "148";
+    </script>
+    
+    <script src='https://greystone.brightgauge.co/static/js/dist/lib.shared.min.js?v=10'></script>
+    <script src='https://greystone.brightgauge.co/static/js/dist/lib.min.js?v=10'></script>
+    
+    <script src='https://greystone.brightgauge.co/static/js/src/lib/socket.io-1.0.6.js'></script>
+    <script>
+      
+      window.auth_token = '014faed2f3b821827076fe78aa2d3395';
+      window.subdomain = 'greystone';
+      window.authenticate = function(data) {
+        if(data && data.status == 'unauthenticated') {
+          console.log("Authenticating with socket server");
+          var auth = {};
+          auth["token"] = window.auth_token;
+          auth["subdomain"] = window.subdomain;
+          socket.emit("authenticate", auth);
+        }
+        if(data && data.status == 'success') {
+          console.log("Authenticated with socket server");
+        }
+        if(data && data.status == 'error') {
+          console.log("Unable to authenticate with socket server");
+        }
+      };
+      window.connect_socket = function(){
+        window.socket = io.connect("http://"+ window.subdomain +".brightgauge.co:5000")
+        window.socket.on('authenticate', window.authenticate);
+        return window.socket
+      };
+      
+      
+    </script>
+    <script src='https://greystone.brightgauge.co/use.typekit.net/qvl8dal.js'></script>
+    <script>
+      
+      	try{Typekit.load();}catch(e){}
+      	$(document).ready(
+        	function(){
+          		$create = $('.global-create-button');
+          		$create.popup({
+            on: 'click',
+            html: $('#create-html').html(),
+            inline: true,
+            offset: 7,
+            position: 'bottom center'
+          });
+          $(window).resize(
+            function(){
+              if($create.popup('is visible') == true){
+                $create.popup('hide');
+              }
+            }
+          );
+        }
+      );
+      
+    </script>
+    
+    <script src='https://greystone.brightgauge.co/static/js/dist/app.min.js?v=148'></script>
+    
+    
+    
+
+<script>
+  window.intercomSettings = {
+    name: "Enplug Test",
+    email: "matt.r.sanders@gmail.com",
+    user_id: 74290,
+    role: "VIEWER",
+    cancelled: "false",
+    company: {
+      name: "Greystone Technology",
+      id: 2604,
+      subdomain: "greystone",
+      company_url: "https://greystone.brightgauge.co",
+      plan: "Advanced",
+      created_at: 1529089919,
+      cancelled: "false",
+      one_datasource_connected: "True"
+    },
+    app_id: "kfimc31l"
+  };
+</script>
+
+<script>
+  (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/kfimc31l';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+
+
+
+    
+  </head>
+  <body class='login' onload="tried()">
+    
+    
+    
+    
+    <div ng-app="app"  >
+    
+    
+    
+    <div class='container-fluid' id='main-container'>
+      
+
+<link href="https://greystone.brightgauge.co/static/styleguide.css" rel='stylesheet' type='text/css'>
+
+
+<div class='ui grid fluid bgs-theme' id='loginscreen' loginscreen>
+  <div class='column eight wide hero computer only'>
+    <div class='ui grid container flex-centered'>
+      <div class='row centered'>
+        <div class='column twelve wide'>
+          <div class='ui segment basic center aligned main-message'>
+            <h1>
+              All your KPIs
+              <br>
+              in one place
+            </h1>
+            <p>
+              Leverage your data and discover what needs
+              <br>
+              improvement – all in one, easy to use platform.
+            </p>
+          </div>
+          <img alt='example dashboard' class='ui image fluid' src="https://greystone.brightgauge.co/static/img/login/login_dashboard.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='column eight wide computer sixteen wide'>
+    <div class='ui grid centered main flex-centered'>
+      <div class='column sixteen wide'>
+        <div class='ui grid'>
+          <!-- logo -->
+          <div class='row centered computer tablet only'>
+            <img alt='brightgauge logo' class='ui image' src="https://greystone.brightgauge.co/static/img/bg-logos/bgs-logo-dark.svg">
+          </div>
+          <div class='row centered mobile only'>
+            <img alt='brightgauge logo' class='ui image small' src="https://greystone.brightgauge.co/static/img/bg-logos/bgs-logo-dark.svg">
+          </div>
+          <!-- login / reset section -->
+          <div class='column sixteen wide'>
+            <div class='ui grid'>
+              <div class='row centered middle aligned login-form'>
+                <div class='column twelve wide computer sixteen wide center aligned'>
+                  
+                  
+                  <p class='form-label'>
+                    Welcome! Login to your account
+                  </p>
+                  <form action='https://greystone.brightgauge.co/dashboards/0fcba4f3-70e0-11e8-bc55-0afd416ee8ca/' class='ui form large' method='post'>
+                    <input type='hidden' name='csrfmiddlewaretoken' value='AQhj7Jz4RaUK3uiz3rxiwC5VncdsDGZMITm6U14CGroN5NPIEHA8WYck8zsMfbJH' />
+                    <div class='field'>
+                      <input class='ui input fluid' id="username" name='username' placeholder='matt.r.sanders@gmail.com' required type='email'>
+                    </div>
+                    <div class='field'>
+                      <input class='ui input fluid' id="password" name='password' placeholder='RobinSparkles4Ever!!' required type='password'>
+                      <input name='next' type='hidden' value=''>
+                    </div>
+                    <div class='field'>
+                      <button class='ui button fluid large positive' type='submit'>
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class='ui container segment basic center aligned'>
+                  <a class='forgot-password'>
+                    Forgot your password?
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- reset form -->
+          <div class='row centered middle aligned password-reset-form hidden'>
+            <div class='column twelve wide computer sixteen wide'>
+              <p class='form-label'>
+                Enter your email to reset your password
+              </p>
+              <form action="https://greystone.brightgauge.co/accounts/password/reset/" class='ui form large' method='post'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='LNpLrYA9JvKAqtyWr7DkiePQJwMlzl8cTQuyeg5HyMeDsM552nGaIAWfuT1FbQS7' />
+                <div class='field'>
+                  <input class='ui input fluid twice' name='email' placeholder='Email' required type='email'>
+                </div>
+                <div class='field'>
+                  <button class='ui button fluid large positive' type='submit'>
+                    Reset
+                  </button>
+                </div>
+              </form>
+              <div class='ui container segment basic center aligned'>
+                <a class='back-to-login'>
+                  Back to Login
+                </a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    
+    </div>
+    
+  </body>
+  
+</html>
